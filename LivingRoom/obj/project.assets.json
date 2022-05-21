@@ -72,6 +72,70 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "LivingRoom.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "LivingRoom.Entities": "1.0.0",
+          "LivingRoom.Repository": "1.0.0",
+          "LivingRoom.Services": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/LivingRoom.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LivingRoom.Application.dll": {}
+        }
+      },
+      "LivingRoom.DataAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "LivingRoom.Entities": "1.0.0",
+          "LivingRoom.Services": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/LivingRoom.DataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LivingRoom.DataAccess.dll": {}
+        }
+      },
+      "LivingRoom.Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/LivingRoom.Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LivingRoom.Entities.dll": {}
+        }
+      },
+      "LivingRoom.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "LivingRoom.DataAccess": "1.0.0",
+          "LivingRoom.Entities": "1.0.0",
+          "LivingRoom.Services": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/LivingRoom.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LivingRoom.Repository.dll": {}
+        }
+      },
+      "LivingRoom.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/LivingRoom.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LivingRoom.Services.dll": {}
+        }
       }
     }
   },
@@ -200,10 +264,38 @@
         "swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512",
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
+    },
+    "LivingRoom.Application/1.0.0": {
+      "type": "project",
+      "path": "../LivingRoom.Application/LivingRoom.Application.csproj",
+      "msbuildProject": "../LivingRoom.Application/LivingRoom.Application.csproj"
+    },
+    "LivingRoom.DataAccess/1.0.0": {
+      "type": "project",
+      "path": "../LivingRoom.DataAccess/LivingRoom.DataAccess.csproj",
+      "msbuildProject": "../LivingRoom.DataAccess/LivingRoom.DataAccess.csproj"
+    },
+    "LivingRoom.Entities/1.0.0": {
+      "type": "project",
+      "path": "../LivingRoom.Entities/LivingRoom.Entities.csproj",
+      "msbuildProject": "../LivingRoom.Entities/LivingRoom.Entities.csproj"
+    },
+    "LivingRoom.Repository/1.0.0": {
+      "type": "project",
+      "path": "../LivingRoom.Repository/LivingRoom.Repository.csproj",
+      "msbuildProject": "../LivingRoom.Repository/LivingRoom.Repository.csproj"
+    },
+    "LivingRoom.Services/1.0.0": {
+      "type": "project",
+      "path": "../LivingRoom.Services/LivingRoom.Services.csproj",
+      "msbuildProject": "../LivingRoom.Services/LivingRoom.Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "LivingRoom.Application >= 1.0.0",
+      "LivingRoom.Entities >= 1.0.0",
+      "LivingRoom.Services >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
   },
@@ -213,9 +305,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jeiss\\OneDrive\\Documentos\\PROGRAMACION\\Living\\LivingRoom\\LivingRoom\\LivingRoom.csproj",
-      "projectName": "LivingRoom",
-      "projectPath": "C:\\Users\\jeiss\\OneDrive\\Documentos\\PROGRAMACION\\Living\\LivingRoom\\LivingRoom\\LivingRoom.csproj",
+      "projectUniqueName": "C:\\Users\\jeiss\\OneDrive\\Documentos\\PROGRAMACION\\Living\\LivingRoom\\LivingRoom\\LivingRoom.WebAPI.csproj",
+      "projectName": "LivingRoom.WebAPI",
+      "projectPath": "C:\\Users\\jeiss\\OneDrive\\Documentos\\PROGRAMACION\\Living\\LivingRoom\\LivingRoom\\LivingRoom.WebAPI.csproj",
       "packagesPath": "C:\\Users\\jeiss\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\jeiss\\OneDrive\\Documentos\\PROGRAMACION\\Living\\LivingRoom\\LivingRoom\\obj\\",
       "projectStyle": "PackageReference",
@@ -233,7 +325,17 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\jeiss\\OneDrive\\Documentos\\PROGRAMACION\\Living\\LivingRoom\\LivingRoom.Application\\LivingRoom.Application.csproj": {
+              "projectPath": "C:\\Users\\jeiss\\OneDrive\\Documentos\\PROGRAMACION\\Living\\LivingRoom\\LivingRoom.Application\\LivingRoom.Application.csproj"
+            },
+            "C:\\Users\\jeiss\\OneDrive\\Documentos\\PROGRAMACION\\Living\\LivingRoom\\LivingRoom.Entities\\LivingRoom.Entities.csproj": {
+              "projectPath": "C:\\Users\\jeiss\\OneDrive\\Documentos\\PROGRAMACION\\Living\\LivingRoom\\LivingRoom.Entities\\LivingRoom.Entities.csproj"
+            },
+            "C:\\Users\\jeiss\\OneDrive\\Documentos\\PROGRAMACION\\Living\\LivingRoom\\LivingRoom.Services\\LivingRoom.Services.csproj": {
+              "projectPath": "C:\\Users\\jeiss\\OneDrive\\Documentos\\PROGRAMACION\\Living\\LivingRoom\\LivingRoom.Services\\LivingRoom.Services.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -269,7 +371,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
