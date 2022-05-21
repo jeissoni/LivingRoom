@@ -1,6 +1,10 @@
 ﻿namespace LivingRoom.Application
 {
-    public class Class1
+    public interface IApplication<T> 
+    {
+
+    }
+    public class Application<T>
     {
 
     }
