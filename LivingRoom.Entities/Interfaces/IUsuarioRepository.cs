@@ -9,7 +9,7 @@ namespace LivingRoom.Entities.Interfaces
 {
     public interface IUsuarioRepository
     {
-        void CreateUser(UsuarioDTO usuario);
-        IEnumerable<UsuarioDTO> GetAll();
+        void CreateUser(TUsuarios usuario);
+        IEnumerable<TUsuarios> GetAll();
     }
 }
