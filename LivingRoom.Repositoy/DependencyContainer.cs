@@ -1,5 +1,4 @@
 ﻿using LivingRoom.Entities.Interfaces;
-using LivingRoom.Repositoy.Models;
 using LivingRoom.Repositoy.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -14,14 +13,14 @@ namespace LivingRoom.Repositoy
 {
     public static class DependencyContainer
     {
-        public static IServiceCollection AddRepositories(
-            this IServiceCollection services,
-            IConfiguration configuration)
-        {
-            services.AddDbContext<bdtosahdContext>(options =>
-            options.UseNpgsql(configuration.GetConnectionString("LivingRoom")));
+        //public static IServiceCollection AddRepositories(
+        //    this IServiceCollection services,
+        //    IConfiguration configuration)
+        //{
+        //    services.AddDbContext<bdtosahdContext>(options =>
+        //    options.UseNpgsql(configuration.GetConnectionString("LivingRoom")));
 
-            services.AddScoped<IUsuarioRepository, UserRepository>();
-        }
+        //    services.AddScoped<IUsuarioRepository, UserRepository>();
+        //}
     }
 }

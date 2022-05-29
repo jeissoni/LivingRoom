@@ -5,13 +5,13 @@ VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Entities", "Entities", "{D635EF2C-3091-49C3-8FD9-228AF84699B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LivingRoom.Entities", "LivingRoom.Entities\LivingRoom.Entities.csproj", "{8F726BB6-B2EE-4870-BC6C-4D9F821D241F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LivingRoom.Entities", "LivingRoom.Entities\LivingRoom.Entities.csproj", "{8F726BB6-B2EE-4870-BC6C-4D9F821D241F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InterfaceAdapters", "InterfaceAdapters", "{A83B8F66-8ACC-49A4-8A19-1D1BD68ACF0E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateways", "Gateways", "{2D61DD6B-943C-42C1-ACFA-91073291C858}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LivingRoom.Repositoy", "LivingRoom.Repositoy\LivingRoom.Repositoy.csproj", "{825194BD-28F9-4259-8E86-1BB68BB84CE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LivingRoom.Repositoy", "LivingRoom.Repositoy\LivingRoom.Repositoy.csproj", "{825194BD-28F9-4259-8E86-1BB68BB84CE6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

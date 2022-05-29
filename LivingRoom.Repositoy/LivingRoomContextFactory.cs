@@ -9,13 +9,17 @@ using System.Threading.Tasks;
 
 namespace LivingRoom.Repositoy
 {
-    internal class LivingRoomContextFactory : IDesignTimeDbContextFactory<LivingRoomContext>
+    //fabrica de contexto
+    class LivingRoomContextFactory : 
+        IDesignTimeDbContextFactory<LivingRoomContext>
     {
         public LivingRoomContext CreateDbContext(string[] args)
         {
-            var OptionBuilder = new DbContextOptionsBuilder<LivingRoomContext>();
+            var OptionBuilder = 
+                new DbContextOptionsBuilder<LivingRoomContext>();
 
-            OptionBuilder.UseNpgsql("Host=localhost;Database=pruebas;Username=UsuSistema;Password=Welcome101!");
+            OptionBuilder.UseNpgsql
+                ("Host=tuffi.db.elephantsql.com;Database=bdtosahd;Username=bdtosahd;Password=exF7SDHWA1Km8NVFWUGzhV0FM4X1Di72");
 
             return new LivingRoomContext(OptionBuilder.Options);    
         }
