@@ -1,4 +1,5 @@
 ﻿using LivingRoom.Entities.Interfaces;
+using LivingRoom.Entities.POCOs;
 using LivingRoom.Repositoy.DataContext;
 using System;
 using System.Collections.Generic;
@@ -8,22 +9,23 @@ using System.Threading.Tasks;
 
 namespace LivingRoom.Repositoy.Repositories
 {
-    //public class UserRepository : IUsuarioRepository
-    //{
-    //    readonly bdtosahdContext context;
+    public class UserRepository : IUsuarioRepository
+    {
+        readonly LivingRoomContext context;
 
-    //    public UserRepository(bdtosahdContext _context) 
-    //    {
-    //        context = _context;
-    //    }
-    //    public void CreateUser(UsuarioDTO usuario)
-    //    {
-    //        context.Add(usuario);
-    //    }
+        public UserRepository(LivingRoomContext _context)
+        {
+            context = _context;
+        }
+        public void CreateUser(User usuario)
+        {
+            context.Add(usuario);
+        }
 
-    //    public IEnumerable<TUsuarios> GetAll()
-    //    {
-    //        return context.TUsuarios;
-    //    }
-    //}
+        public IEnumerable<User> GetAll()
+        {
+            return context.Users;
+        }
+     
+    }
 }

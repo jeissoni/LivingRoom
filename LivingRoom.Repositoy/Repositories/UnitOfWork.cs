@@ -1,32 +1,28 @@
 ﻿using LivingRoom.Entities.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using LivingRoom.Repositoy.DataContext;
 
 namespace LivingRoom.Repositoy.Repositories
 {
-    //public class UnitOfWork : IUnitOfWork
-    //{
-    //    readonly bdtosahdContext context;
+    public class UnitOfWork : IUnitOfWork
+    {
+        readonly LivingRoomContext context;
 
-    //    public UnitOfWork(bdtosahdContext _context)
-    //    {
-    //        context = _context;
-    //    }
-    //    public Task<int> SaveChanges()
-    //    {
-    //        try
-    //        {
-    //            return context.SaveChangesAsync();
-    //        }
-    //        catch (Exception)
-    //        {
+        public UnitOfWork(LivingRoomContext _context)
+        {
+            context = _context;
+        }
+        public Task<int> SaveChanges()
+        {
+            try
+            {
+                return context.SaveChangesAsync();
+            }
+            catch (Exception)
+            {
+                //capturar los errores y manejarlos 
+                throw;
+            }
 
-    //            throw;
-    //        }
-
-    //    }
-    //}
+        }
+    }
 }
