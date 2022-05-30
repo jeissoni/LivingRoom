@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\LivingRoom.Entities\LivingRoom.Entities.csproj" />
+    <ProjectReference Include="..\LivingRoom.UseCasesPort\LivingRoom.UseCasesPort.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -2,11 +2,6 @@
 using LivingRoom.Entities.Interfaces;
 using LivingRoom.Entities.POCOs;
 using LivingRoom.UseCasesPort;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LivingRoom.UseCases.CreateUser
 {
@@ -19,7 +14,7 @@ namespace LivingRoom.UseCases.CreateUser
         public CreateUserInteractor(
             IUsuarioRepository _repository,
             IUnitOfWork _unitOfWork,
-            ICreateUserOutPutPort _outPutPort)            
+            ICreateUserOutPutPort _outPutPort)
         {
             repository = _repository;
             unitOfWork = _unitOfWork;
@@ -27,7 +22,8 @@ namespace LivingRoom.UseCases.CreateUser
         }
         public async Task Handle(CreateUserDTO user)
         {
-            User newUser = new User { 
+            User newUser = new User
+            {
                 Name = user.UserName
             };
 
