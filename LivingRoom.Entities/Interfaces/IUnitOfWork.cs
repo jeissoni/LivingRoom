@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LivingRoom.Entities.Interfaces
+﻿namespace LivingRoom.Entities.Interfaces
 {
+    //patron de diseño que agrupa las transacciones de una entidad
     public interface IUnitOfWork
     {
         Task<int> SaveChanges();

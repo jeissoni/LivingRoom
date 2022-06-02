@@ -1,31 +1,26 @@
-﻿using LivingRoom.Entities.DTO;
-using LivingRoom.Entities.Interfaces;
+﻿using LivingRoom.Entities.Interfaces;
+using LivingRoom.Entities.POCOs;
 using LivingRoom.Repositoy.DataContext;
-using LivingRoom.Repositoy.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LivingRoom.Repositoy.Repositories
 {
     public class UserRepository : IUsuarioRepository
     {
-        readonly bdtosahdContext context;
+        readonly LivingRoomContext context;
 
-        public UserRepository(bdtosahdContext _context) 
+        public UserRepository(LivingRoomContext _context)
         {
             context = _context;
         }
-        public void CreateUser(TUsuarios usuario)
+        public void CreateUser(User usuario)
         {
             context.Add(usuario);
         }
 
-        public IEnumerable<TUsuarios> GetAll()
+        public IEnumerable<User> GetAll()
         {
-            return (IEnumerable<TUsuarios>)context.TUsuarios;
+            return context.Users;
         }
+     
     }
 }

@@ -1,15 +1,10 @@
-﻿using LivingRoom.Entities.DTO;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LivingRoom.Entities.POCOs;
 
 namespace LivingRoom.Entities.Interfaces
 {
     public interface IUsuarioRepository
     {
-        void CreateUser(TUsuarios usuario);
-        IEnumerable<TUsuarios> GetAll();
+        void CreateUser(User usuario);
+        IEnumerable<User> GetAll();
     }
 }

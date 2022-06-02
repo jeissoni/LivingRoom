@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using LivingRoom.Entities.POCOs;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,10 @@ namespace LivingRoom.Repositoy.DataContext
     public class LivingRoomContext : DbContext
     {
         public LivingRoomContext(
-            DbContextOptions<LivingRoomContext> options) : base(options) { }
+            DbContextOptions<LivingRoomContext> options) 
+            : base(options) { }
+
+        public DbSet<User> Users { get; set; }
         
     }
 }

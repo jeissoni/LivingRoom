@@ -1,18 +1,13 @@
 ﻿using LivingRoom.Entities.Interfaces;
-using LivingRoom.Repositoy.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using LivingRoom.Repositoy.DataContext;
 
 namespace LivingRoom.Repositoy.Repositories
 {
     public class UnitOfWork : IUnitOfWork
     {
-        readonly bdtosahdContext context;
+        readonly LivingRoomContext context;
 
-        public UnitOfWork(bdtosahdContext _context)
+        public UnitOfWork(LivingRoomContext _context)
         {
             context = _context;
         }
@@ -24,10 +19,10 @@ namespace LivingRoom.Repositoy.Repositories
             }
             catch (Exception)
             {
-
+                //capturar los errores y manejarlos 
                 throw;
             }
-            
+
         }
     }
 }

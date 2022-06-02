@@ -1,25 +1,22 @@
 ﻿using LivingRoom.Entities.Interfaces;
-using LivingRoom.Repositoy.Models;
+using LivingRoom.Repositoy.DataContext;
 using LivingRoom.Repositoy.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LivingRoom.Repositoy
 {
     public static class DependencyContainer
     {
+        //para poder inyectar los servicios
         public static IServiceCollection AddRepositories(
             this IServiceCollection services,
             IConfiguration configuration)
         {
-            services.AddDbContext<bdtosahdContext>(options =>
-            options.UseNpgsql(configuration.GetConnectionString("LivingRoom")));
+            services.AddDbContext<LivingRoomContext>(options =>
+            options.UseNpgsql(
+                configuration.GetConnectionString("LivingRoom")));
 
             services.AddScoped<IUsuarioRepository, UserRepository>();
 
