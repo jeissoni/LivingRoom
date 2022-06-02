@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Entities", "Entities", "{D635EF2C-3091-49C3-8FD9-228AF84699B7}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Enterprise Business Rules", "Enterprise Business Rules", "{D635EF2C-3091-49C3-8FD9-228AF84699B7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LivingRoom.Entities", "LivingRoom.Entities\LivingRoom.Entities.csproj", "{8F726BB6-B2EE-4870-BC6C-4D9F821D241F}"
 EndProject
@@ -15,11 +15,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LivingRoom.Repositoy", "Liv
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application Business Rules", "Application Business Rules", "{023FE998-4A27-4128-AB9F-5DA37D717F45}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LivingRoom.DTOs", "LivingRoom.DTOs\LivingRoom.DTOs.csproj", "{E315F30E-39F9-4529-863B-E1A1BA4C677A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LivingRoom.DTOs", "LivingRoom.DTOs\LivingRoom.DTOs.csproj", "{E315F30E-39F9-4529-863B-E1A1BA4C677A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LivingRoom.UseCasesPort", "LivingRoom.UseCasesPort\LivingRoom.UseCasesPort.csproj", "{D31B23E7-0D2B-4564-9886-A3FD816C5DE8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LivingRoom.UseCasesPort", "LivingRoom.UseCasesPort\LivingRoom.UseCasesPort.csproj", "{D31B23E7-0D2B-4564-9886-A3FD816C5DE8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LivingRoom.UseCases", "LivingRoom.UseCases\LivingRoom.UseCases.csproj", "{584BCA45-C36A-4579-B685-41B6FBA2EC8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LivingRoom.UseCases", "LivingRoom.UseCases\LivingRoom.UseCases.csproj", "{584BCA45-C36A-4579-B685-41B6FBA2EC8B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
