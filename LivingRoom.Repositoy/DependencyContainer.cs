@@ -21,6 +21,9 @@ namespace LivingRoom.Repositoy
             services.AddScoped<IUsuarioRepository, UserRepository>();
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+            
+            //agregar servicio para poder ler los secretos
+            services.AddSingleton(configuration);
 
             return services;
         }
