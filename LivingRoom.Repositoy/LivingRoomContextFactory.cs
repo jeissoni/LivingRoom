@@ -9,23 +9,21 @@ namespace LivingRoom.Repositoy
     public class LivingRoomContextFactory : 
         IDesignTimeDbContextFactory<LivingRoomContext>
     {
-        private readonly IConfiguration _configuration;
+
+        //private readonly IConfiguration _configuration;
+        private readonly StringConnectionBuilder _stringConnectionBuilder;
 
         public LivingRoomContextFactory(IConfiguration configuration) 
         {
-            _configuration = configuration;
+            _stringConnectionBuilder = new StringConnectionBuilder(configuration);
         }
         public LivingRoomContext CreateDbContext(string[] args)
         {
             var OptionBuilder = 
-                new DbContextOptionsBuilder<LivingRoomContext>();
+                new DbContextOptionsBuilder<LivingRoomContext>();                       
 
-            OptionBuilder.UseNpgsql
-                ($"Host={_configuration["Host"]};" +
-                $"Database={_configuration["Database"]};" +
-                $"Username={_configuration["Username"]};" +
-                $"Password= {_configuration["Password"]}");
-
+            OptionBuilder.UseNpgsql(_stringConnectionBuilder.ConnectionString());
+                        
             return new LivingRoomContext(OptionBuilder.Options);    
         }
     }
