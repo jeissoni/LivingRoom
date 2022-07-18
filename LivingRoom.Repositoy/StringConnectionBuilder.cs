@@ -16,12 +16,13 @@ namespace LivingRoom.Repositoy
         public string ConnectionString() 
         {
             SqlConnectionStringBuilder
-                connectionStringBuilder = new();
-
-            connectionStringBuilder.DataSource = _configuration["Host"];
-            connectionStringBuilder.InitialCatalog = _configuration["Database"];
-            connectionStringBuilder.UserID = _configuration["Username"];
-            connectionStringBuilder.Password = _configuration["Password"];
+                connectionStringBuilder = new()
+                {
+                    DataSource = _configuration["Host"],
+                    InitialCatalog = _configuration["Database"],
+                    UserID = _configuration["Username"],
+                    Password = _configuration["Password"]
+                };
 
             return connectionStringBuilder.ConnectionString;
         }
