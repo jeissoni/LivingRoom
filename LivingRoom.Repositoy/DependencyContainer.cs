@@ -4,6 +4,7 @@ using LivingRoom.Repositoy.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Npgsql;
 using System.Data.SqlClient;
 
 namespace LivingRoom.Repositoy
@@ -20,19 +21,21 @@ namespace LivingRoom.Repositoy
             var OptionBuilder =
                new DbContextOptionsBuilder<LivingRoomContext>();
 
-            var connectionString = $"Host={configuration["Host"]};" +
-                $"Database={configuration["Database"]};" +
-                $"Username={configuration["User"]};" +
-                $"Password={configuration["Password"]}";
+            NpgsqlConnectionStringBuilder connectionStringBuilder = new()
+            {
+                Host = configuration["Host"],
+                Database = configuration["Database"],
+                Username = configuration["user"],
+                Password = configuration["password"]
+            };
 
             services.AddDbContext<LivingRoomContext>(options =>
                         options.UseNpgsql(
-                            connectionString)
-                            //configuration.GetConnectionString("LivingRoom"))
+                            connectionStringBuilder.ConnectionString)
             );
 
             services.AddDbContext<LivingRoomContext>(options =>
-            options.UseNpgsql(connectionString));
+            options.UseNpgsql(connectionStringBuilder.ConnectionString));
 
             services.AddScoped<IUsuarioRepository, UserRepository>();
 

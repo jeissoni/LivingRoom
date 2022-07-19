@@ -1,11 +1,6 @@
 ﻿using LivingRoom.DTOs;
 using LivingRoom.Entities.Interfaces;
 using LivingRoom.UseCasesPort;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LivingRoom.UseCases.GetAllProducts
 {
@@ -27,7 +22,9 @@ namespace LivingRoom.UseCases.GetAllProducts
             new UserDTO
             {
                 Id = x.Id,
-                Name = x.Name
+                FirstName = x.FirstName,    
+                LastName = x.LastName,  
+                Age = x.Age
             });
             
             outputPort.Handle(Users);

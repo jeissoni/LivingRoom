@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
+using Npgsql;
 using System.Data.SqlClient;
 
 namespace LivingRoom.Repositoy
@@ -15,14 +16,14 @@ namespace LivingRoom.Repositoy
 
         public string ConnectionString() 
         {
-            SqlConnectionStringBuilder
-                connectionStringBuilder = new()
-                {
-                    DataSource = _configuration["Host"],
-                    InitialCatalog = _configuration["Database"],
-                    UserID = _configuration["Username"],
-                    Password = _configuration["Password"]
-                };
+
+            NpgsqlConnectionStringBuilder connectionStringBuilder = new()
+            {
+                Host = _configuration["Host"],
+                Database = _configuration["Database"],
+                Username = _configuration["user"],
+                Password = _configuration["password"]
+            };                     
 
             return connectionStringBuilder.ConnectionString;
         }

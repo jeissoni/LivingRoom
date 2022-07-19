@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LivingRoom.Presenter
+﻿namespace LivingRoom.Presenter
 {
     //son clases que se usan solo para formatear los datos 
     //no tiene logica de nogocio, solo logica para formatear datos 

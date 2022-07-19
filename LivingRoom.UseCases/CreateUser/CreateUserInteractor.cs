@@ -24,7 +24,9 @@ namespace LivingRoom.UseCases.CreateUser
         {
             User newUser = new User
             {
-                Name = user.UserName
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Age = user.Age
             };
 
             repository.CreateUser(newUser);
@@ -33,7 +35,9 @@ namespace LivingRoom.UseCases.CreateUser
                 new UserDTO
                 {
                     Id = newUser.Id,
-                    Name = user.UserName
+                    Age = user.Age,
+                    FirstName = user.FirstName,
+                    LastName= user.LastName                   
                 });
         }
     }
