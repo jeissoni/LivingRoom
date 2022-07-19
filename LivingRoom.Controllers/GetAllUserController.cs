@@ -8,12 +8,12 @@ namespace LivingRoom.Controllers
 
     [Route("api/[controller]")]
     [ApiController]
-    public class GetAllProductsController
+    public class GetAllUserController
     {
         readonly IGetAllUserInputPort inputPort;
         readonly IGetAllUserOutputPort outPutPort;
 
-        public GetAllProductsController(
+        public GetAllUserController(
             IGetAllUserInputPort _inputPort,
             IGetAllUserOutputPort _outPutPort)
         {
