@@ -21,6 +21,11 @@ namespace LivingRoom.Repositoy.DataContext
         public DbSet<LeaderLivingGroup> LeaderLivingGroups { get; set; }
         public DbSet<AttendeeLivingGroup> AttendeeLivingGroups { get; set; }
 
-
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+        //    //llave compuesta
+        //    modelBuilder.Entity<AttendeeLivingGroup>()
+        //        .HasKey(c => new { c.IdLivingGroup, c.User });
+        //}
     }
 }

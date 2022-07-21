@@ -28,7 +28,7 @@ namespace LivingRoom.Repositoy
 }
 
 //1.
-// add - migration Migration19072022 - p LivingRoom.Repositoy - c LivingRoomContext - o Migrations - s LivingRoom.Repositoy
+// add-migration Migration19072022 -p LivingRoom.Repositoy -c LivingRoomContext -o Migrations -s LivingRoom.Repositoy
 // Add-Migration [-Name] <String> [-OutputDir <String>] [-Context <String>] [-Project <String>][-StartupProject<String>][<CommonParameters>]
 // add-migration Migration19072022 -p LivingRoom.Repositoy -c LivingRoomContext -o Migrations -s LivingRoom.Repositoy
 
