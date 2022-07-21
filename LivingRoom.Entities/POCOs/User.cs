@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,7 +34,11 @@ namespace LivingRoom.Entities.POCOs{
         [DefaultValue("false")]
         public bool Attendee { get; set; }
 
-        public UserAddress Address { get; set; }
+        public List<UserAddress> Address { get; set; }
+
+        public List<AttendeeLivingGroup> AttendeeLivingGroups { get; set; }
+
+        public List<LeaderLivingGroup> LeaderLivingGroups { get; set; }
 
 
     }
