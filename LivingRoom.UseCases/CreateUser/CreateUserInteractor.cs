@@ -22,11 +22,18 @@ namespace LivingRoom.UseCases.CreateUser
         }
         public async Task Handle(CreateUserDTO user)
         {
-            User newUser = new User
+            User newUser = new()
             {
+                IdUser = user.IdUser,
                 FirstName = user.FirstName,
                 LastName = user.LastName,
-                Age = user.Age
+                DateOfBirth = user.DateOfBirth, 
+                Email = user.Email, 
+                Gender = user.Gender,
+                CellPhoneNumber = user.CellPhoneNumber,
+                Occupation = user.Occupation,
+                Address = user.Address
+
             };
 
             repository.CreateUser(newUser);

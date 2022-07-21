@@ -23,8 +23,7 @@ namespace LivingRoom.UseCases.GetAllProducts
             {
                 Id = x.Id,
                 FirstName = x.FirstName,    
-                LastName = x.LastName,  
-                Age = x.Age
+                LastName = x.LastName
             });
             
             outputPort.Handle(Users);
