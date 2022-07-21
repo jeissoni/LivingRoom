@@ -13,16 +13,13 @@ namespace LivingRoom.DTOs
         public string? Occupation { get; set; }
         public int CellPhoneNumber { get; set; }
         public string Email { get; set; }
-
-        [DefaultValue("false")]
         public bool Leader { get; set; }
-
-        [DefaultValue("false")]
         public bool Support { get; set; }
-
-        [DefaultValue("false")]
         public bool Attendee { get; set; }
-
         public UserAddressDTO Address { get; set; }
+
+        public AttendeeLivingGroupDTO AttendeeLivingGroups { get; set; }
+
+        public LeaderLivingGroupDTO LeaderLivingGroups { get; set; }
     }
 }

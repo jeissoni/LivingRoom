@@ -22,6 +22,6 @@ namespace LivingRoom.DTOs
         [DefaultValue("false")]
         public bool Attendee { get; set; }
 
-        public UserAddressDTO Address { get; set; }
+        public UserAddressDTO? Address { get; set; }
     }
 }
