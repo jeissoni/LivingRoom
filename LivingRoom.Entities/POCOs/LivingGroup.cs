@@ -1,12 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace LivingRoom.Entities.POCOs
+﻿namespace LivingRoom.Entities.POCOs
 {
     public class LivingGroup
     {
-        [Key]
-        public int IdLivingGroup { get; set; }
+     
+        public int Id { get; set; }
 
         public virtual City City { get; set; }
 
@@ -20,8 +17,7 @@ namespace LivingRoom.Entities.POCOs
 
         public string Description { get; set; }
 
-        public List<AttendeeLivingGroup> AttendeeLivingGroups { get; set; }
-        public List<LeaderLivingGroup> LeaderLivingGroups { get; set; }
+        public ICollection<User> Users { get; set; }
 
         public enum Days
         {

@@ -16,10 +16,8 @@ namespace LivingRoom.DTOs
         public bool Leader { get; set; }
         public bool Support { get; set; }
         public bool Attendee { get; set; }
-        public UserAddressDTO Address { get; set; }
 
-        public AttendeeLivingGroupDTO AttendeeLivingGroups { get; set; }
+        public UserAddressDTO AddressUser { get; set; }
 
-        public LeaderLivingGroupDTO LeaderLivingGroups { get; set; }
     }
 }

@@ -1,27 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 
-namespace LivingRoom.Entities.POCOs{
+namespace LivingRoom.Entities.POCOs
+{
 
     //POCO: Son las siglas de Plain Old C# Object,
     //y se refieren a clases simples que no dependen de ninguna framework.
     //Es un término derivado del concepto del mundo Java: POJO.
     public class User
-    {
-        [Key]
+    {       
         public int Id { get; set; }
         public int? IdUser { get; set; }
         public string FirstName { get; set; }
         public string? LastName { get; set; }
         public DateTime? DateOfBirth { get; set; }   
-        public string? Gender { get; set; }
-        public string? Occupation { get; set; }
+        public Genders Gender { get; set; }
+
+        public Occupation Occupation { get; set; }
+        public Segmentation Segmentation { get; set; }
+        public SchoolGrade SchoolGrade { get; set; }
         public int CellPhoneNumber { get; set; }
         public string Email { get; set; }
 
@@ -33,12 +29,39 @@ namespace LivingRoom.Entities.POCOs{
 
         [DefaultValue("false")]
         public bool Attendee { get; set; }
+        public bool Sons { get; set; }
+        public int NumberOfChildren { get; set; }
+        public Days[] DaysAvailable { get; set; }
+        
+        public UserAddress UserAddress { get; set; }
+        public LivingGroup UserLivingGroup { get; set; }
 
-        public List<UserAddress> Address { get; set; }
+        public enum Days 
+        {
+            Lunes,
+            Martes,
+            Miercoles,
+            Jueves, 
+            Viernes, 
+            Sabado, 
+            Domingo
+        }
 
-        public List<AttendeeLivingGroup> AttendeeLivingGroups { get; set; }
+        public enum Genders
+        {
+           Men,
+           Woman
+        }
 
-        public List<LeaderLivingGroup> LeaderLivingGroups { get; set; }
+        public enum MaritalStatus 
+        {
+            Casado_a,
+            Soltero_a,
+            Divorciado_a,
+            Viudo_a,
+            UnionLibre,
+            Otro
+        }
 
 
     }

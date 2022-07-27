@@ -5,7 +5,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Npgsql;
-using System.Data.SqlClient;
 
 namespace LivingRoom.Repositoy
 {
@@ -37,6 +36,7 @@ namespace LivingRoom.Repositoy
             services.AddDbContext<LivingRoomContext>(options =>
             options.UseNpgsql(connectionStringBuilder.ConnectionString));
 
+            //se ofrece servicios IUsuarioRepository implementado por UserRepository
             services.AddScoped<IUsuarioRepository, UserRepository>();
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
