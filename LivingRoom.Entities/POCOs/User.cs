@@ -15,9 +15,16 @@ namespace LivingRoom.Entities.POCOs
         public DateTime? DateOfBirth { get; set; }   
         public Genders Gender { get; set; }
 
+
+        public int OccupationForeignKey { get; set; }
         public Occupation Occupation { get; set; }
+
+        public int SegmentationForeignKey { get; set; }
         public Segmentation Segmentation { get; set; }
+
+        public int SchoolGradeForeignKey { get; set; }
         public SchoolGrade SchoolGrade { get; set; }
+
         public int CellPhoneNumber { get; set; }
         public string Email { get; set; }
 
@@ -32,9 +39,12 @@ namespace LivingRoom.Entities.POCOs
         public bool Sons { get; set; }
         public int NumberOfChildren { get; set; }
         public Days[] DaysAvailable { get; set; }
-        
+
+        public int UserAddressForeignKey { get; set; }
         public UserAddress UserAddress { get; set; }
-        public LivingGroup UserLivingGroup { get; set; }
+
+        public int LivingGroupForeignKey { get; set; }
+        public LivingGroup LivingGroup { get; set; }
 
         public enum Days 
         {
