@@ -10,13 +10,13 @@ namespace LivingRoom.Repositoy.DataContext
             : base(options) { }
 
         public DbSet<Country> Countries { get; set; }
-
         public DbSet<City> Cities { get; set; }
-        public DbSet<User> Users { get; set; }
-
         public DbSet<UserAddress> UserAddresses { get; set; }  
-
         public DbSet<LivingGroup> LivingGroups { get; set; }
+        public DbSet<SchoolGrade> SchoolGrade { get; set; }
+        public DbSet<Segmentation> Segmentations { get; set; }
+        public DbSet<Occupation> Occupations { get; set; }
+        public DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -36,36 +36,50 @@ namespace LivingRoom.Repositoy.DataContext
                 .HasKey(x => x.Id);
 
             modelBuilder.Entity<LivingGroup>()
-                .HasKey(x => x.Id);       
+                .HasKey(x => x.Id);
+
+            modelBuilder.Entity<City>()
+               .HasKey(x => x.Id);
+
+            modelBuilder.Entity<Country>()
+               .HasKey(x => x.Id);
+
 
 
             //lave foranea de uno a muchos 
             //un usuario muchas direcciones
             //se inicia desde la entidad (*)
-            modelBuilder.Entity<UserAddress>()
-                .HasMany(a => a.Users)
-                .WithOne(u => u.UserAddress);
+            modelBuilder.Entity<User>()
+                .HasOne(a => a.UserAddress)
+                .WithMany(u => u.Users)
+                .HasForeignKey(a => a.UserAddressForeignKey);
 
-            modelBuilder.Entity<LivingGroup>()
-                .HasMany(a => a.Users)
-                .WithOne(u => u.UserLivingGroup);
+            modelBuilder.Entity<User>()
+                .HasOne(a => a.LivingGroup)
+                .WithMany(u => u.Users)
+                .HasForeignKey(x=>x.LivingGroupForeignKey);
 
-            modelBuilder.Entity<Country>()
-               .HasMany(a => a.City)
-               .WithOne(u => u.Country);
+            modelBuilder.Entity<City>()
+               .HasOne(c => c.Country)
+               .WithMany(c => c.City)
+               .HasForeignKey(c => c.CountryForeignKey);
 
-            modelBuilder.Entity<Occupation>()
-               .HasOne(a => a.User)
-               .WithOne(u => u.Occupation);
+
 
             modelBuilder.Entity<SchoolGrade>()
                .HasOne(a => a.User)
-               .WithOne(u => u.SchoolGrade);
+               .WithOne(u => u.SchoolGrade)
+               .HasForeignKey<User>(x=>x.SchoolGradeForeignKey);
 
             modelBuilder.Entity<Segmentation>()
              .HasOne(a => a.User)
-             .WithOne(u => u.Segmentation);
+             .WithOne(u => u.Segmentation)
+             .HasForeignKey<User>(x => x.SegmentationForeignKey);
 
+            modelBuilder.Entity<Occupation>()
+               .HasOne(a => a.User)
+               .WithOne(x=> x.Occupation)
+               .HasForeignKey<User>(x => x.OccupationForeignKey);
 
         }
     }
